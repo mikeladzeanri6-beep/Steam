@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half-Life: Alyx on Steam</title>
+    <link rel="icon" type="svg+xml" href="steam-logo.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-view="store">
+
+    <div class="client-bar">
+        <img class="client-bar__logo" src="steam-logo.svg" alt="">
+        <ul class="client-menu">
+            <li><button class="menu-btn" data-menu="steam">Steam</button></li>
+            <li><button class="menu-btn" data-menu="view">View</button></li>
+            <li><button class="menu-btn" data-menu="friends">Friends</button></li>
+            <li><button class="menu-btn" data-menu="games">Games</button></li>
+            <li><button class="menu-btn" data-menu="help">Help</button></li>
+        </ul>
+    </div>
+
+    <header class="topbar">
+        <div class="topbar__inner">
+            <div class="topbar__arrows">
+                <button class="icon-btn" id="backBtn" data-action="back" aria-label="Back"><img src="arrow-back.svg" alt=""></button>
+                <button class="icon-btn" id="fwdBtn" data-action="forward" aria-label="Forward"><img src="arrow-forward.svg" alt=""></button>
+            </div>
+            <nav aria-label="Main" class="main-nav">
+                <button data-action="nav" data-view="store">STORE</button>
+                <button data-action="nav" data-view="library">LIBRARY</button>
+                <button data-action="nav" data-view="profile" id="navName">PLAYER_NAME</button>
+            </nav>
+            <div class="topbar__right">
+                <button class="cart-btn" id="cartBtn" data-action="view-cart">Cart (0)</button>
+                <span class="wallet" id="wallet"></span>
+            </div>
+        </div>
+        <div class="address-bar" id="address"></div>
+    </header>
+
+    <div class="store-nav">
+        <div class="store-nav__inner">
+            <nav class="store-nav__links" aria-label="Store">
+                <button class="menu-btn" data-menu="browse">Browse</button>
+                <button class="menu-btn" data-menu="recs">Recommendations</button>
+                <button class="menu-btn" data-menu="categories">Categories</button>
+                <button class="menu-btn" data-menu="hardware">Hardware</button>
+                <button class="menu-btn" data-menu="ways">Ways to Play</button>
+                <button class="menu-btn" data-menu="more">More</button>
+            </nav>
+            <form class="search" role="search" id="searchForm" autocomplete="off">
+                <input type="text" id="searchInput" placeholder="Search the store" aria-label="Search the store">
+                <button type="submit" aria-label="Search"><img src="search.svg" alt=""></button>
+                <ul class="suggest" id="suggest" hidden></ul>
+            </form>
+        </div>
+    </div>
+
+    <main class="page" id="view"></main>
+
+    <div id="dropdown" class="dropdown" hidden></div>
+    <div id="overlay" class="overlay" hidden></div>
+    <div id="toast" class="toast" hidden></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
